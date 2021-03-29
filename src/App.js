@@ -1,21 +1,22 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Redirect, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import './App.scss'
 import Login from './pages/Login'
 import Users from './pages/Users'
 
-function App() {
+function App () {
   return (
     <Router>
       <div className="container">
         <main>
           <Switch>
+            <Redirect exact from="/" to="/login"/>
             <Route path="/login">
-              <Login />
+              <Login/>
             </Route>
             <Route path="/home/users">
-              <Users />
+              <Users/>
             </Route>
           </Switch>
         </main>
